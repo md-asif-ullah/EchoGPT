@@ -92,8 +92,20 @@ export function AppSidebar() {
           {/* Sidebar Header */}
           <div className="flex items-center justify-between mx-5 h-20">
             <div className="flex items-center space-x-2">
-              <Image src="/icons/icon.png" alt="Logo" width={40} height={40} />
-              <h1 className="font-bold text-2xl">Echo GPT</h1>
+              <Image
+                src="/icons/sidebarDarkLogo.png"
+                alt="Logo"
+                width={250}
+                height={200}
+                className="hidden dark:block"
+              />
+              <Image
+                src="/icons/sidebarLightLogo.png"
+                alt="Logo"
+                width={250}
+                height={200}
+                className="dark:hidden"
+              />
             </div>
             {/* Close button for mobile */}
             <button
@@ -106,7 +118,7 @@ export function AppSidebar() {
 
           {/* Scrollable Content */}
           <div className="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
-            <button className="w-full border dark:border-white border-[#d1bff5] text-[#6c22f5] flex items-center justify-center py-2 px-3 rounded-xl">
+            <button className="w-full border cursor-pointer dark:border-white border-[#d1bff5] text-[#6c22f5] flex items-center justify-center py-2 px-3 rounded-xl">
               <i className="text-2xl">
                 <HiOutlinePencilAlt />
               </i>
@@ -115,7 +127,7 @@ export function AppSidebar() {
 
             {sidebarItems.map((item, index) => (
               <div key={index}>
-                <h2 className="text-xs font-semibold mt-10">{item.name}</h2>
+                <h2 className="text-xs font-semibold mt-6">{item.name}</h2>
                 {item.items && (
                   <ul className="space-y-2 mt-5">
                     {item.items.map((subItem, index) => (
@@ -135,8 +147,7 @@ export function AppSidebar() {
             ))}
           </div>
 
-          {/* Sidebar Footer (Fixed) */}
-
+          {/* Sidebar Footer */}
           <SidebarFooterSection />
         </div>
       </aside>
