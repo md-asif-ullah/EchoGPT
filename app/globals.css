@@ -131,7 +131,7 @@
       [&::-webkit-scrollbar-thumb]:bg-gradient-to-b 
       [&::-webkit-scrollbar-thumb]:from-[#f7f4fe] 
       [&::-webkit-scrollbar-thumb]:to-[#7452dc] 
-      dark:[&::-webkit-scrollbar-track]:bg-[#0a0a0a] 
+      /* dark:[&::-webkit-scrollbar-track]:bg-[#0a0a0a]  */
       dark:[&::-webkit-scrollbar-thumb]:from-[#1e192c] 
       dark:[&::-webkit-scrollbar-thumb]:to-[#7452dc];
   }

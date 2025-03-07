@@ -1,6 +1,6 @@
 "use client";
 
-import { JSX, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import Link from "next/link";
 import { IoMenuOutline } from "react-icons/io5";
 import SidebarFooterSection from "./SidebarFooterSection";
@@ -12,6 +12,8 @@ import { MdOutlineSubscriptions } from "react-icons/md";
 import { TbApiApp } from "react-icons/tb";
 import { RxCross1, RxDiscordLogo } from "react-icons/rx";
 import Image from "next/image";
+import { nanoid } from "nanoid";
+import { useRouter } from "next/navigation";
 
 type SidebarItem = {
   title: string;
@@ -71,6 +73,18 @@ export function AppSidebar() {
     },
   ];
 
+  const router = useRouter();
+
+  useEffect(() => {
+    const newChatId = nanoid();
+    router.replace(`/?id=${newChatId}&model=EchoGPT`);
+  }, [router]);
+
+  const handleNewPostUrl = () => {
+    const newChatId = nanoid();
+    router.replace(`/?id=${newChatId}&model=EchoGPT`);
+  };
+
   return (
     <>
       {/* Sidebar Toggle Button */}
@@ -118,7 +132,10 @@ export function AppSidebar() {
 
           {/* Scrollable Content */}
           <div className="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
-            <button className="w-full border cursor-pointer dark:border-white border-[#d1bff5] text-[#6c22f5] flex items-center justify-center py-2 px-3 rounded-xl">
+            <button
+              onClick={() => handleNewPostUrl()}
+              className="w-full border cursor-pointer dark:border-white border-[#d1bff5] text-[#6c22f5] flex items-center justify-center py-2 px-3 rounded-xl"
+            >
               <i className="text-2xl">
                 <HiOutlinePencilAlt />
               </i>

@@ -1,5 +1,6 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import Header from "@/components/header";
+import PageHeader from "@/components/page-header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,6 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Main content area */}
         <div className="flex-1 h-screen overflow-auto bg-white dark:bg-[#131119]">
+          <PageHeader />
           {children}
         </div>
       </section>
