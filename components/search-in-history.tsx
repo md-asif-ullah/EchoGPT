@@ -105,19 +105,20 @@ const SearchInHistory = () => {
             userMessage?.map((msg, msgIdx) => (
               <div
                 key={`${msgIdx}`}
-                className="bg-[#131119] p-3 rounded-xl w-full flex justify-between items-center "
+                className="dark:bg-[#131119] bg-white p-3 rounded-xl w-full flex justify-between items-center "
               >
                 {/* Left Section: Image and Message */}
                 <div className="flex items-center space-x-4">
-                  <Image
-                    src="/icons/icon.png"
-                    alt="logo"
-                    width={24}
-                    height={24}
-                    className="rounded-full"
-                  />
+                  <div className="">
+                    <Image
+                      src="/icons/icon.png"
+                      alt="logo"
+                      width={35}
+                      height={35}
+                    />
+                  </div>
                   <div className="flex flex-col">
-                    <h2 className="text-lg font-semibold text-white">
+                    <h2 className="text-lg font-semibold dark:text-white text-black">
                       {msg.content}
                     </h2>
                     <p className="text-xs text-gray-400 mt-1">
@@ -140,11 +141,11 @@ const SearchInHistory = () => {
         </div>
 
         <div className="xl:w-[800px] absolute bottom-0 left-0 right-0">
-          <div className="bg-gradient-to-b from-[#1f1e3b] to-[#6063e9] opacity-80 p-6 text-center mt-4 h-40 pt-16">
+          <div className=" bg-gradient-to-b from-[#e6e5fe] to-[#6a6df1] dark:from-[#1f1e3b] dark:to-[#6063e9] opacity-80 p-6 text-center mt-4 h-40 pt-16">
             <button className="bg-[#6f23fd] cursor-pointer px-4 py-2 rounded-lg text-white font-semibold mb-2">
               Upgrade
             </button>
-            <p className="dark:text-white text-base font-bold mt-4">
+            <p className="text-white text-base font-bold mt-4">
               To view your complete history, please upgrade to unlock full
               access and enjoy additional features.
             </p>
