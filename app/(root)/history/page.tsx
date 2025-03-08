@@ -1,5 +1,9 @@
 import SearchInHistory from "@/components/search-in-history";
-import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Chat history | EchoGPT",
+};
 
 const History = () => {
   return (
