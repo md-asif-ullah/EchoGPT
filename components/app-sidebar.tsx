@@ -105,22 +105,24 @@ export function AppSidebar() {
         <div className="flex flex-col h-full">
           {/* Sidebar Header */}
           <div className="flex items-center justify-between mx-5 h-20">
-            <div className="flex items-center space-x-2">
-              <Image
-                src="/icons/sidebarDarkLogo.png"
-                alt="Logo"
-                width={250}
-                height={200}
-                className="hidden dark:block"
-              />
-              <Image
-                src="/icons/sidebarLightLogo.png"
-                alt="Logo"
-                width={250}
-                height={200}
-                className="dark:hidden"
-              />
-            </div>
+            <Link href="/">
+              <div className="flex items-center space-x-2">
+                <Image
+                  src="/icons/sidebarDarkLogo.png"
+                  alt="Logo"
+                  width={250}
+                  height={200}
+                  className="hidden dark:block"
+                />
+                <Image
+                  src="/icons/sidebarLightLogo.png"
+                  alt="Logo"
+                  width={250}
+                  height={200}
+                  className="dark:hidden"
+                />
+              </div>
+            </Link>
             {/* Close button for mobile */}
             <button
               className="text-[#6a22f1] border-2 border-[#6a22f1] rounded-full p-1 text-xs font-semibold md:hidden"
