@@ -16,7 +16,7 @@ const MessagesSection = ({ messages, modelContent }: props) => {
             msg.role === "user" ? "justify-end" : "justify-start"
           }`}
         >
-          <div className={`p-3 rounded-lg flex items-center`}>
+          <div className={`p-3 rounded-lg flex items-start`}>
             {msg.role !== "user" && (
               <Image
                 src={modelContent.img}
