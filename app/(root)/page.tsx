@@ -8,6 +8,7 @@ import { FaMicrophoneAlt } from "react-icons/fa";
 import PlanSection from "@/components/plan-section";
 import FeaturesSection from "@/components/feature-section";
 import MessagesSection from "@/components/message-section";
+import { useSearchParams } from "next/navigation";
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -20,6 +21,11 @@ export default function Chat() {
       "Interact with EchoGPT, an AI that reflects your input for quick ideas, summaries, or feedback. Perfect for brainstorming or rapid dialogue.",
   });
 
+  const searchParams = useSearchParams();
+
+  const id = searchParams.get("id");
+  const model = searchParams.get("model");
+
   const handleSendMessage = async () => {
     if (!input.trim()) return;
 
@@ -29,7 +35,9 @@ export default function Chat() {
     try {
       const response = await axios.post("/api/chat", {
         messages: [...messages, newMessage],
-        model: "EchoGPT",
+        userId: "12345",
+        id,
+        chatModel: model,
       });
 
       const botReply = {
