@@ -3,3 +3,8 @@ type Items = {
   title: string;
   description: string;
 };
+
+type Message = {
+  role: string;
+  content: string;
+};

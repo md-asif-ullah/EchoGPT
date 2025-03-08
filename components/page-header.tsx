@@ -7,7 +7,7 @@ const PageHeader = () => {
   const user = false;
 
   return (
-    <div className="md:flex justify-end items-center w-full h-20 pr-5 hidden bg-[#18161f]">
+    <div className="md:flex justify-end items-center w-full h-20 pr-5 hidden bg-white dark:bg-[#18161f]">
       {user ? (
         <Image
           src="/icons/icon.png"

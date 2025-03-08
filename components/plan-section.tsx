@@ -1,20 +1,21 @@
 import Image from "next/image";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-type AiModel = {
+interface AiModel {
   name: string;
   model: {
     img: string;
     title: string;
     description: string;
   }[];
-};
+}
 
 interface propsType {
   setModelContent: (item: Items) => void;
+  modelContent: Items;
 }
 
-function PlanSection({ setModelContent }: propsType) {
+function PlanSection({ setModelContent, modelContent }: propsType) {
   const aiModel: AiModel[] = [
     {
       name: "Default Models",
@@ -26,13 +27,13 @@ function PlanSection({ setModelContent }: propsType) {
             "Interact with EchoGPT, an AI that reflects your input for quick ideas, summaries, or feedback. Perfect for brainstorming or rapid dialogue.",
         },
         {
-          img: "/icons/icon.png",
+          img: "/icons/gemma2.png",
           title: "Gemma2-9B",
           description:
             "Gemma2-9B specializes in advanced data exploration, leveraging AI to deliver accurate, insightful, and efficient solutions for complex analysis.",
         },
         {
-          img: "/icons/icon.png",
+          img: "/icons/llama.png",
           title: "llama-3.3-70B",
           description:
             "llama-3.3-70B specializes in advanced data exploration, leveraging AI to deliver accurate, insightful, and efficient solutions for complex analysis.",
@@ -110,24 +111,24 @@ function PlanSection({ setModelContent }: propsType) {
     <div className="pb-4">
       <div className="flex space-x-6">
         <div className="relative group">
-          <button className="text-white flex items-center space-x-1">
+          <button className="dark:text-white flex items-center space-x-1">
             <Image
-              src="/icons/icon.png"
+              src={modelContent.img}
               alt="Logo"
               width={20}
               height={20}
               className="rounded-full"
             />
-            <span>Services</span>
+            <span>{modelContent.title}</span>
             <MdKeyboardArrowDown className="group-hover:rotate-180 transition-transform duration-200" />
           </button>
 
-          <div className="absolute left-0 bottom-full mb-2 w-[400px] h-[400px] overflow-auto custom-scrollbar bg-white dark:bg-[#18161f] text-gray-800 shadow-lg invisible group-hover:visible transition-all duration-200 border border-[#34303d] rounded-2xl">
+          <div className="absolute left-0 bottom-full mb-2 w-[400px] h-[400px] overflow-auto custom-scrollbar bg-white dark:bg-[#18161f] text-gray-800 shadow-lg invisible group-hover:visible transition-all duration-200 border dark:border-[#2b303e] border-b-neutral-50 rounded-2xl">
             <div className="px-2 py-1 text-black dark:text-white cursor-pointer">
               <section className="flex justify-between items-center p-4">
                 <div className="flex items-center space-x-2">
                   <Image
-                    src="/icons/model.svg"
+                    src={modelContent.img}
                     alt="model logo"
                     width={20}
                     height={20}
@@ -149,7 +150,7 @@ function PlanSection({ setModelContent }: propsType) {
 
               {aiModel.map((model, index) => (
                 <div key={index} className="mb-4">
-                  <h3 className="text-gray-800 dark:text-[#868688] border-b border-[#22202a] mx-4 pb-2 text-xs font-bold mb-2">
+                  <h3 className="text-gray-800 dark:text-[#868688] border-b dark:border-[#2b303e] border-b-neutral-50 mx-4 pb-2 text-xs font-bold mb-2">
                     {model.name}
                   </h3>
 
