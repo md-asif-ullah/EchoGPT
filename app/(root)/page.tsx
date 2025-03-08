@@ -9,6 +9,7 @@ import PlanSection from "@/components/plan-section";
 import FeaturesSection from "@/components/feature-section";
 import MessagesSection from "@/components/message-section";
 import { useSearchParams } from "next/navigation";
+import LoadingAnimaiton from "@/components/loading-animation";
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -83,16 +84,22 @@ export default function Chat() {
             ></textarea>
 
             <div className="flex items-start space-x-2 mr-4 mt-4">
-              <button className="text-gray-500 hover:text-blue-500 duration-200">
-                <FaMicrophoneAlt className="text-2xl" />
-              </button>
-              <button
-                onClick={handleSendMessage}
-                disabled={loading}
-                className="rounded-full duration-200 cursor-pointer"
-              >
-                <FiSend className="text-2xl text-gray-500" />
-              </button>
+              {loading ? (
+                <LoadingAnimaiton />
+              ) : (
+                <>
+                  <button className="text-gray-500 hover:text-blue-500 duration-200">
+                    <FaMicrophoneAlt className="text-2xl" />
+                  </button>
+                  <button
+                    onClick={handleSendMessage}
+                    disabled={loading}
+                    className="rounded-full duration-200 cursor-pointer"
+                  >
+                    <FiSend className="text-2xl text-gray-500" />
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </section>
