@@ -139,12 +139,12 @@ const SearchInHistory = () => {
             ))}
         </div>
 
-        <div className=" mx-auto xl:w-[800px] absolute bottom-0 left-0 right-0">
-          <div className="bg-gradient-to-b from-[#1f1e3b] to-[#6063e9] opacity-80 p-6 text-center mt-4">
+        <div className="xl:w-[800px] absolute bottom-0 left-0 right-0">
+          <div className="bg-gradient-to-b from-[#1f1e3b] to-[#6063e9] opacity-80 p-6 text-center mt-4 h-40 pt-16">
             <button className="bg-[#6f23fd] cursor-pointer px-4 py-2 rounded-lg text-white font-semibold mb-2">
               Upgrade
             </button>
-            <p className="dark:text-white text-base font-bold">
+            <p className="dark:text-white text-base font-bold mt-4">
               To view your complete history, please upgrade to unlock full
               access and enjoy additional features.
             </p>
